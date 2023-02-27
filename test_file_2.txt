@@ -1,1 +1,0 @@
-Second test file created in test_checkout_2 branch.
