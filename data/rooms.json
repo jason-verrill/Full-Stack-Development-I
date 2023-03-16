@@ -1,0 +1,22 @@
+[
+	{
+		"name": "FIRST CLASS",
+		"description": "Cras dui sapien, feugiat vitae tristique ut, lobortis tempor orci. Donec pulvinar sagittis metus ut tristique. Pellentes que habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas idios.",
+		"rate": "220",
+		"image": "first-class.jpg"
+	},
+	
+	{
+		"name": "DELUXE",
+		"description": "Cras dui sapien, feugiat vitae tristique ut, lobortis tempor orci. Donec pulvinar sagittis metus ut tristique. Pellentes que habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas idios.",
+		"rate": "150",
+		"image": "deluxe.jpg"
+	},
+	
+	{
+		"name": "SUITE",
+		"description": "Cras dui sapien, feugiat vitae tristique ut, lobortis tempor orci. Donec pulvinar sagittis metus ut tristique. Pellentes que habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas idios.",
+		"rate": "180",
+		"image": "suite.jpg"
+	}
+]
