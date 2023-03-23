@@ -6,6 +6,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('hbs')
 
+// Connect the database model
+require('./app_server/models/db');
+
 // Get public objects from page routes
 const usersRouter = require('./app_server/routes/users');
 const indexRouter = require('./app_server/routes/index');
