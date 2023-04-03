@@ -1,15 +1,15 @@
-// Use filesync
-const fs = require('fs');
+// Get handle to mongoose collections
+const mongoose = require('mongoose');
+const roomsCollection = mongoose.model('rooms');
 
-// Get JSON data
-const roomsData = JSON.parse(fs.readFileSync('./data/rooms.json', 'utf8'));
-
-// Render rooms page
-const rooms = (req, res) => {
+// Render page
+const rooms = async (req, res) => {
+	roomsData = await roomsCollection.find();
+	
 	res.render('rooms', {title: 'Travlr Getaways', roomsData});
 };
 
 // Make objects public
 module.exports = {
 	rooms
-}
+};

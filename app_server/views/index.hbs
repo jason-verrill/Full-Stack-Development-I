@@ -24,7 +24,7 @@
 							<div>
 								<h3>Latest Blog</h3>
 								<ul>
-									{{#each blogs}}
+									{{#each blogsData}}
 										<li>
 											<h4><a href="/news">{{this.title}}</a></h4>
 											<span>{{this.date}}</span>
@@ -41,7 +41,7 @@
 							<div>
 								<h3>Testimonials</h3>
 								<p>
-									{{#each testimonials}}
+									{{#each testimonialsData}}
 										{{this.text}}
 										<span>- <a href="/index">{{this.author}}</a></span>
 									{{/each}}

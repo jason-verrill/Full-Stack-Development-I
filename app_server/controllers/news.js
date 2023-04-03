@@ -1,16 +1,17 @@
-// Use filesync
-const fs = require('fs');
+// Get handle to mongoose collections
+const mongoose = require('mongoose');
+const newsCollection = mongoose.model('news');
+const tipsCollection = mongoose.model('tips');
 
-// Get JSON data
-const newsData = JSON.parse(fs.readFileSync('./data/news.json', 'utf8'));
-const tipsData = JSON.parse(fs.readFileSync('./data/tips.json', 'utf8'));
-
-// Render news page
-const news = (req, res) => {
+// Render page
+const news = async (req, res) => {
+	newsData = await newsCollection.find();
+	tipsData = await tipsCollection.find();
+	
 	res.render('news', {title: 'Travlr Getaways', newsData, tipsData});
 };
 
 // Make objects public
 module.exports = {
 	news
-}
+};

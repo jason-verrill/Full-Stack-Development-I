@@ -7,9 +7,9 @@ const logger = require('morgan');
 const hbs = require('hbs')
 
 // Connect the database model
-require('./app_server/models/db');
+require('./app_api/models/db');
 
-// Get public objects from page routes
+// Get page routes from app_server
 const usersRouter = require('./app_server/routes/users');
 const indexRouter = require('./app_server/routes/index');
 const travelRouter = require('./app_server/routes/travel');
@@ -19,9 +19,13 @@ const newsRouter = require('./app_server/routes/news');
 const aboutRouter = require('./app_server/routes/about');
 const contactRouter = require('./app_server/routes/contact');
 
+// Get page routes from app_api
+const apiRouter = require('./app_api/routes/index');
+
+// Create express instance
 const app = express();
 
-// view engine setup
+// View engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname, 'app_server', 'views/partials'));
@@ -35,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Map URL paths to route functions
 // Function will be called when a matching URL is entered
+// app_server
 app.use('/users', usersRouter);
 app.use('/', indexRouter);
 app.use('/travel', travelRouter);
@@ -43,6 +48,9 @@ app.use('/meals', mealsRouter);
 app.use('/news', newsRouter);
 app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
+
+// app_api
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

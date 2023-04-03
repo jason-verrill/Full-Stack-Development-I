@@ -1,16 +1,17 @@
-// Use filesync
-const fs = require('fs');
+// Get handle to mongoose collections
+const mongoose = require('mongoose');
+const blogsCollection = mongoose.model('blogs');
+const testimonialsCollection = mongoose.model('testimonials');
 
-// Get JSON data
-const blogs = JSON.parse(fs.readFileSync('./data/blogs.json', 'utf8'));
-const testimonials = JSON.parse(fs.readFileSync('./data/testimonials.json', 'utf8'));
-
-// Render index page
-const index = (req, res) => {
-	res.render('index', {title: 'Travlr Getaways', blogs, testimonials});
+// Render page
+const index = async (req, res) => {
+	blogsData = await blogsCollection.find();
+	testimonialsData = await testimonialsCollection.find();
+	
+	res.render('index', {title: 'Travlr Getaways', blogsData, testimonialsData});
 };
 
 // Make objects public
 module.exports = {
 	index
-}
+};

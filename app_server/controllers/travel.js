@@ -1,12 +1,11 @@
-// Use filesync
-const fs = require('fs');
-
-// Get JSON data
-const trips = JSON.parse(fs.readFileSync('./data/trips.json', 'utf8'));
+// Get handle to mongoose
+const mongoose = require('mongoose');
+const collection = mongoose.model('trips');
 
 // Render travel page
-const travel = (req, res) => {
-	res.render('travel', {title: 'Travlr Getaways', trips});
+const travel = async (req, res) => {
+	const tripsData = await collection.find();
+	res.render('travel', {title: 'Travlr Getaways', tripsData});
 };
 
 // Make objects public

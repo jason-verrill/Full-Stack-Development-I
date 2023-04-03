@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Define a schema
-const tripSchema = new mongoose.Schema({
+const schema = new mongoose.Schema({
 	code: { type: String, required: true, index: true },
 	name: { type: String, required: true, index: true },
 	length: { type: String, require: true },
@@ -13,4 +13,4 @@ const tripSchema = new mongoose.Schema({
 });
 
 // Create the schema
-mongoose.model('trips', tripSchema);
+mongoose.model('trips', schema);

@@ -2,7 +2,15 @@
 const mongoose = require('mongoose');
 
 // File includes
+require('./blogs');
+require('./meals');
+require('./news');
+require('./rooms');
+require('./testimonials');
+require('./tips');
 require('./trips');
+
+// Seed the database
 const {seed} = require('./seed');
 
 // Server data
