@@ -5,6 +5,11 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('hbs')
+const cors = require('cors');
+const corsOptions = {
+	origin: 'http://localhost:4200',
+	allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
+}
 
 // Connect the database model
 require('./app_api/models/db');
@@ -50,7 +55,7 @@ app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
 
 // app_api
-app.use('/api', apiRouter);
+app.use('/api', cors(corsOptions), apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
