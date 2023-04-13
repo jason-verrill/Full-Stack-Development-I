@@ -9,6 +9,7 @@ require('./rooms');
 require('./testimonials');
 require('./tips');
 require('./trips');
+require('./user');
 
 // Seed the database
 const {seed} = require('./seed');

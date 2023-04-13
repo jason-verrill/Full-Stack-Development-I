@@ -1,4 +1,5 @@
 // Get public objects from installed packages
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -13,6 +14,7 @@ const corsOptions = {
 
 // Connect the database model
 require('./app_api/models/db');
+require('./app_api/config/passport');
 
 // Get page routes from app_server
 const usersRouter = require('./app_server/routes/users');
