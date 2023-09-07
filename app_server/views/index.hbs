@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Travlr Getaways Website Template</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			{{> header}}
+			<div id="contents">
+				<div id="adbox">
+					<img src="images/sea-sound.jpg" alt="Img">
+					<h1>Enjoy the Summer with Us!</h1>
+					<p>
+						This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forums/">Forum</a>.
+					</p>
+				</div>
+				<div id="main">
+					<div class="box">
+						<div>
+							<div>
+								<h3>Latest Blog</h3>
+								<ul>
+									{{#each blogsData}}
+										<li>
+											<h4><a href="/news">{{this.title}}</a></h4>
+											<span>{{this.date}}</span>
+											<p>{{this.text}}</p>
+										</li>
+									{{/each}}
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="testimonials" class="box">
+						<div>
+							<div>
+								<h3>Testimonials</h3>
+								<p>
+									{{#each testimonialsData}}
+										{{this.text}}
+										<span>- <a href="/index">{{this.author}}</a></span>
+									{{/each}}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="sidebar">
+					<div class="section">
+						<a href="/rooms"><img src="images/rooms.png" alt="Img"></a>
+					</div>
+					<div class="section">
+						<a href="/dives"><img src="images/dive-site.png" alt="Img"></a>
+					</div>
+					<div class="section">
+						<a href="/foods"><img src="images/food.png" alt="Img"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{> footer}}
+	</div>
+</body>
+</html>
