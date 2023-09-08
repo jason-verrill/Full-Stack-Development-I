@@ -1,6 +1,6 @@
 # Full-Stack-Development-I <br/>
 <br/>
-In this respository I built a MEAN (MongoDB, Express.js, Angular, Node.js) and a simplier MEN stack. Only the major code files have been included. <br/>
+In this respository I built a MEAN (MongoDB, Express.js, Angular, Node.js) and a simpler MEN stack. Only the major code files have been included. <br/>
 <br/>
 This website makes use of Mongoose and MongoDB which I containerized with Docker. I built a RESTful API which is called via the web interface using a middleware stack to connect the function calls and logic together. <br/>
 <br/>
